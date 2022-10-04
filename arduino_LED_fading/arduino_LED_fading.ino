@@ -1,5 +1,5 @@
 
-const int ledPin = 3;     //led connected to pin 9 (PWM)
+const int ledPin = 9;     //led connected to pin 9 (PWM)
 int brightness = 0;       //brightness level (0-255)
 int fadeAmount = 5;       //fading levels
 
