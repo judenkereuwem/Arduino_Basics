@@ -4,9 +4,7 @@ int brightness = 0;       //brightness level (0-255)
 int fadeAmount = 5;       //fading levels
 
 void setup() {
-  const int ledPin = 3;   //led connected to pin 9 (PWM)
-  int brightness = 0;     //brightness level (0-255)
-  int fadeAmount = 5;     //fading levels
+  
 }
 
 void loop() {
