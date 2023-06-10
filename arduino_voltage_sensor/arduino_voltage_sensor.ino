@@ -27,7 +27,7 @@ void loop() {
 
   //display on serial monitor
   Serial.print("Voltage = ");
-  Serial.print(vIN, 2);
+  Serial.print(vIN, 3);
   Serial.println(" volts DC");
 
   delay(1000);
