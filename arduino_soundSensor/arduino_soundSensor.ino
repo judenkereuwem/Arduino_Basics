@@ -10,7 +10,7 @@ void loop() {
   // Read Sound sensor
   int sensorData = analogRead(sensorPin);
   Serial.print("sensor: ");
-  Serial.println(sensorData/2);
+  Serial.println(sensorData);
   delay(100);
    
 }
