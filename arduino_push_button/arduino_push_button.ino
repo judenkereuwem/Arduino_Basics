@@ -4,7 +4,7 @@ const int ledPin =  13;      // the number of the LED pin
 
 void setup() {
   Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);    // set LED pin as an input:
+  pinMode(ledPin, OUTPUT);           // set LED pin as an input:
   pinMode(buttonPin, INPUT_PULLUP);  // set pushbutton pin as an input:
 }
 
