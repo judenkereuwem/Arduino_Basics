@@ -1,6 +1,6 @@
 
 const int buttonPin = 4;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
+const int ledPin =  2;      // the number of the LED pin
 
 void setup() {
   Serial.begin(9600);
@@ -15,7 +15,7 @@ void loop() {
   delay(100);
 
   // if pushbutton is pressed, turn on LED.
-  if (buttonState == HIGH) {
+  if (buttonState == LOW) {
     digitalWrite(ledPin, HIGH);
     
   // if pushbutton is releaased, turn off LED.  

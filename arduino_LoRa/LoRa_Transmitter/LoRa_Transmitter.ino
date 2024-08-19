@@ -31,5 +31,5 @@ void loop() {
   LoRa.print(button);
   LoRa.endPacket();
 
-  delay(500);
+  delay(100);
 }

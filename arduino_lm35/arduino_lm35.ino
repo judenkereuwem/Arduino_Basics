@@ -1,12 +1,7 @@
 
 //Set analog pin the LM35 Vout pin will be connected to
-const int sensorPin = A0;
+#define lm35Pin 28 //A5
 
-//Create variable to store various values
-float sensor_value;
-float voltage;
-float temperatureC;
-float temperatureF;
 
 void setup() {
   // Begin serial communication at 9600 baud rate
@@ -14,17 +9,21 @@ void setup() {
 }
 
 void loop() {
+
   // Get voltage reading from the LM35
-  sensor_value = analogRead(sensorPin);
+  int sensor_value = analogRead(lm35Pin);
 
   // Convert sensor reading to voltage
-  voltage = sensor_value * (5.0 / 1024.0);
+  //float voltage = sensor_value * (5.0 / 1024.0);
+  float voltage = sensor_value * (3.3 / 4096.0);
 
   // Convert voltage reading to temperature in Celisius
-  temperatureC = voltage * 100;
+  float temperatureC = voltage * 100;
+
 
   // Convert voltage reading to temperature in Fahrenheit
-  temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
+  float temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
+
 
   //Print temperature in Celsius
   Serial.print("Temperature: ");
@@ -37,5 +36,5 @@ void loop() {
   Serial.print("\xC2\xB0"); // print degree symbol
   Serial.println("F");
   
-  delay(1000); // Wat for one second before next reading
+  delay(500); // Wat for one second before next reading
 }
