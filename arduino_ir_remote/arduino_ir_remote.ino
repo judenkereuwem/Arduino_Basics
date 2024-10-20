@@ -1,6 +1,6 @@
-#include <IRremote.hpp>
+#include <IRremote.hpp> //v4.2.0
 
-int RECV_PIN = 11;
+int RECV_PIN = 9;
 
 IRrecv irrecv(RECV_PIN);
 decode_results results;
@@ -16,6 +16,11 @@ void loop()
   if (IrReceiver.decode()){
      Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
      IrReceiver.resume(); // Receive the next value
-     //delay(100);
+     delay(100);
     }
 }
+
+
+
+
+

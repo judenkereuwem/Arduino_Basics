@@ -1,5 +1,5 @@
 
-const int ledPin = 2;
+const int ledPin = 7;
 
 void setup() {
   // initialize digital pin 13 as an output.
@@ -10,7 +10,7 @@ void setup() {
 
 void loop() {
   digitalWrite(ledPin, HIGH);    // turn on LED  
-  delay(1000);                   // pause for a second       
+  delay(3000);                   // pause for a second       
   digitalWrite(ledPin, LOW);     // turn LED off   
-  delay(1000);                   // pause for a second           
+  delay(2000);                   // pause for a second           
 }

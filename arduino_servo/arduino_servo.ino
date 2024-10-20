@@ -1,21 +1,37 @@
 
 #include <Servo.h>
 
-Servo myservo;  // create servo object to control a servo
+// Create a Servo object
+Servo myServo;
 
-int pos = 0;    // variable to store the servo position
+// Variable to store the servo position
+int pos = 0;
 
 void setup() {
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  // Attach the servo to a pin
+  myServo.attach(6);
+
+  // Begin Serial communication to print the position
+  Serial.begin(9600);
 }
 
 void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees in steps of 1 degree
-    myservo.write(pos);                 // tell servo to go to position in variable 'pos'
-    delay(20);                          // waits 15ms for the servo to reach the position
+  // Sweep the servo from 0 to 180 degrees
+  for (pos = 0; pos <= 180; pos += 1) {  // Move from 0 to 180 degrees
+    myServo.write(pos);                  // Tell servo to go to 'pos' position
+    delay(50);                           // Wait for the servo to reach the position
+    int currentPos = myServo.read();     // Get the last written position
+    Serial.print("Servo position: ");    // Print the position
+    Serial.println(currentPos);          // Print the value
   }
-  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);                 // tell servo to go to position in variable 'pos'
-    delay(20);                          // waits 15ms for the servo to reach the position
+
+  // Sweep the servo back from 180 to 0 degrees
+  for (pos = 180; pos >= 0; pos -= 1) {  // Move from 180 to 0 degrees
+    myServo.write(pos);                  // Tell servo to go to 'pos' position
+    delay(50);                           // Wait for the servo to reach the position
+    int currentPos = myServo.read();     // Get the last written position
+    Serial.print("Servo position: ");
+    Serial.println(currentPos);          // Print the value
   }
 }
+

@@ -1,5 +1,4 @@
 
-
 #define VRX_PIN  A0 // Arduino pin connected to VRX pin
 #define VRY_PIN  A1 // Arduino pin connected to VRY pin
 #define SW_PIN  3 // Arduino pin connected to SW pin
@@ -23,6 +22,18 @@ void loop() {
   yValue = analogRead(VRY_PIN);
   swValue = digitalRead(SW_PIN);
 
+  //print data to Serial Monitor on Arduino IDE
+  Serial.print("x = ");
+  Serial.print(xValue);
+  Serial.print(", y = ");
+  Serial.print(yValue);
+  Serial.print(", sw = ");
+  Serial.println(swValue);
+  delay(200);
+  
+
+/*
+  
   // UP
   if((xValue >  1020) && (yValue > 520)){
     joystickStatus = "UP";
@@ -55,18 +66,9 @@ void loop() {
 
   Serial.print("Joystick: ");
   Serial.println(joystickStatus);
-  delay(100);
+  delay(100);*/
 
 
 
-  /*
-  // print data to Serial Monitor on Arduino IDE
-  Serial.print("x = ");
-  Serial.print(xValue);
-  Serial.print(", y = ");
-  Serial.print(yValue);
-  Serial.print(", sw = ");
-  Serial.println(swValue);
-  delay(200);
-  */
+
 }
