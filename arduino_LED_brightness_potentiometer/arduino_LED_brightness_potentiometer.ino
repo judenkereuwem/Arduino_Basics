@@ -1,6 +1,6 @@
 
 const int potPin = A0;
-const int ledPin = 6;
+const int ledPin = 5;
 int led_value;
 int pot_value;
 

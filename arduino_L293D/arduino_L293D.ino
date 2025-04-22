@@ -1,11 +1,11 @@
 // Left Motor connections
-int enA = 6;
-int in1 = 8;
-int in2 = 7;
+int enA = 22;
+int in1 = 16;
+int in2 = 17;
 // Right Motor connections
-int enB = 5;
-int in3 = 3;
-int in4 = 4;
+int enB = 23;
+int in3 = 18;
+int in4 = 19;
 
 void setup() {
   // Set all the motor control pins to outputs
@@ -20,29 +20,29 @@ void setup() {
 void loop() {
   // Set motors to maximum speed
   // For PWM maximum possible values are 0 to 255
-  analogWrite(enA, 150);
-  analogWrite(enB, 150);
+  analogWrite(enA, 255);
+  analogWrite(enB, 255);
 
   // Turn on motor A & B
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-  delay(3000);
+  delay(100);
 
-  // Turn off motors
+  /*// Turn off motors
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
-  //delay(2000);
+  delay(1000);
   
   // Now change motor directions
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
-  delay(3000);
+  delay(3000);*/
   
 }
 

@@ -14,5 +14,6 @@ void loop(){
   Serial.println(DHT.temperature);
   Serial.print("Humidity = ");
   Serial.println(DHT.humidity);
+  Serial.println(" ");
   delay(500);
 }
